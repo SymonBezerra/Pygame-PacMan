@@ -9,5 +9,5 @@ class Wall (pygame.sprite.Sprite):
         self.coordinate = coordinate
         
         self.image: pygame.image = pygame.image.load(WALL_SPRITES[type]).convert_alpha()
-        self.image = pygame.transform.scale((50, 50))
+        self.image = pygame.transform.scale((20, 20))
         self.rect = self.image.get_rect()
