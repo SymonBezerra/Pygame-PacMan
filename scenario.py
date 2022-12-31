@@ -1,4 +1,6 @@
 import csv
+import pygame
+
 
 with open ("game_map.csv", newline="") as map:
     reader = csv.reader(map)
