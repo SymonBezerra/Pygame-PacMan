@@ -8,6 +8,6 @@ class Wall (pygame.sprite.Sprite):
     type: int) -> pygame.sprite.Sprite:
         self.coordinate = coordinate
         
-        self.image = pygame.image.load(WALL_SPRITES[type]).convert_alpha()
+        self.image: pygame.image = pygame.image.load(WALL_SPRITES[type]).convert_alpha()
         self.image = pygame.transform.scale((50, 50))
-        self.rect = self.image.get_rect(center=(coordinate))
+        self.rect = self.image.get_rect()
