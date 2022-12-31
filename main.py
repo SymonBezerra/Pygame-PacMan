@@ -26,5 +26,6 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 pygame.quit()
 
-    blit_scenario()
-    
+        blit_scenario()
+
+        pygame.display.flip()

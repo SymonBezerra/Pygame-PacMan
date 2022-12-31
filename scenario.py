@@ -19,6 +19,6 @@ class Scenario:
         self.start_scenario()
     
     def start_scenario (self):
-        for row in MAP_SIZE[0]:
-            for column in MAP_SIZE[1]:
+        for row in range(MAP_SIZE[0]):
+            for column in range(MAP_SIZE[1]):
                 self.tiles.add(Wall((row,column), GAME_MAP[row][column]))
