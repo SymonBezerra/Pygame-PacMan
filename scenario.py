@@ -6,7 +6,7 @@ with open ("game_map.csv", newline="") as map:
     reader = csv.reader(map)
     GAME_MAP = [tile for tile in reader]
 
-MAP_SIZE = (20, 25) #20x25
+MAP_SIZE = (20,25) #20x20
 
 # print(GAME_MAP)
 # the game map will only be used to set up
@@ -21,4 +21,6 @@ class Scenario:
     def start_scenario (self):
         for row in range(MAP_SIZE[0]):
             for column in range(MAP_SIZE[1]):
-                self.tiles.add(Wall((row,column), GAME_MAP[row][column]))
+                tile = Wall((row,column),
+                int(GAME_MAP[column][row]))
+                self.tiles.add(tile)
