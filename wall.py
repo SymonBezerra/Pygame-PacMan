@@ -1,6 +1,7 @@
 import pygame
 
-WALL_SPRITES = {2: "gfx/wall_vertical"}
+WALL_SPRITES = {0: "gfx/food_sprite.png"
+,2: "gfx/wall_vertical.png"}
 
 class Wall (pygame.sprite.Sprite):
 
