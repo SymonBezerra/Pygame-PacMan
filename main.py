@@ -28,20 +28,23 @@ if __name__ == "__main__":
 
     while running:
 
+        screen.fill((0,0,0))
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    pac_man.refresh("UP")
+                    pac_man.move = "UP"
                 elif event.key == pygame.K_DOWN:
-                    pac_man.refresh("DOWN")
+                    pac_man.move = "DOWN"
                 elif event.key == pygame.K_LEFT:
-                    pac_man.refresh("LEFT")
+                    pac_man.move = "LEFT"
                 elif event.key == pygame.K_RIGHT:
-                    pac_man.refresh("RIGHT")
+                    pac_man.move = "RIGHT"
 
         blit_scenario()
         pac_man.show(screen)
+        pac_man.refresh
 
-        pygame.display.update()
+        pygame.display.flip()
