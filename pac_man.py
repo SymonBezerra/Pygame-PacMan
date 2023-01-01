@@ -10,7 +10,7 @@ class PacMan (pygame.sprite.Sprite):
         
         self.rect = self.image.get_rect()
 
-        self.coordinate = [600, 300]
+        self.coordinate = [300, 300]
 
     def show (self, screen: pygame.Surface) -> None:
         self.rect = self.image.get_rect(center=(self.coordinate))
@@ -19,9 +19,9 @@ class PacMan (pygame.sprite.Sprite):
 
     def refresh (self, move: str) -> None:
         if move == "UP":
-            self.coordinate[1] += 5
-        elif move == "DOWN":
             self.coordinate[1] -= 5
+        elif move == "DOWN":
+            self.coordinate[1] += 5
         elif move == "LEFT":
             pass
         elif move == "RIGHT":

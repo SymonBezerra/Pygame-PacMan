@@ -44,4 +44,4 @@ if __name__ == "__main__":
         blit_scenario()
         pac_man.show(screen)
 
-        pygame.display.flip()
+        pygame.display.update()
