@@ -15,6 +15,14 @@ class PacMan (pygame.sprite.Sprite):
     def show (self, screen: pygame.Surface) -> None:
         self.rect = self.image.get_rect(center=(self.coordinate))
         screen.blit(self.image, self.rect)
+        pygame.display.flip()
 
     def refresh (self, move: str) -> None:
-        pass
+        if move == "UP":
+            self.coordinate[1] += 5
+        elif move == "DOWN":
+            self.coordinate[1] -= 5
+        elif move == "LEFT":
+            pass
+        elif move == "RIGHT":
+            pass

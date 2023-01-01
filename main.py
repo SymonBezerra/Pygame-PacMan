@@ -34,6 +34,12 @@ if __name__ == "__main__":
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
                     pac_man.refresh("UP")
+                elif event.key == pygame.K_DOWN:
+                    pac_man.refresh("DOWN")
+                elif event.key == pygame.K_LEFT:
+                    pac_man.refresh("LEFT")
+                elif event.key == pygame.K_RIGHT:
+                    pac_man.refresh("RIGHT")
 
         blit_scenario()
         pac_man.show(screen)
