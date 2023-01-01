@@ -4,6 +4,7 @@ from wall import Wall, WALL_SIZE
 from pac_man import PacMan
 
 screen = pygame.display.set_mode((800, 800))
+CLOCK = pygame.time.Clock()
 pygame.display.set_caption("Pac-Man")
 
 game_scenario = Scenario()
@@ -45,6 +46,7 @@ if __name__ == "__main__":
 
         blit_scenario()
         pac_man.show(screen)
-        pac_man.refresh
+        pac_man.refresh()
 
+        CLOCK.tick(30)
         pygame.display.flip()

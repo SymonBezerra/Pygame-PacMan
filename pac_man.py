@@ -17,7 +17,6 @@ class PacMan (pygame.sprite.Sprite):
     def show (self, screen: pygame.Surface) -> None:
         self.rect = self.image.get_rect(center=(self.coordinate))
         screen.blit(self.image, self.rect)
-        pygame.display.update(self.rect)
 
     def refresh (self) -> None:
         if self.move == "UP":
