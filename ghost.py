@@ -58,3 +58,9 @@ class Ghost (pygame.sprite.Sprite):
         
         self.coordinate = new_rect
         return True
+
+class Blinky (Ghost):
+
+    def __init__ (self, coordinate: tuple):
+        self.coordinate = coordinate
+        super().__init__("Blinky", coordinate)

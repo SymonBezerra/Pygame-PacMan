@@ -2,7 +2,7 @@ import pygame
 from scenario import Scenario, GAME_MAP
 from wall import Wall, WALL_SIZE
 from pac_man import PacMan
-from ghost import Ghost
+from ghost import Ghost, Blinky
 
 screen = pygame.display.set_mode((800, 600))
 CLOCK = pygame.time.Clock()
@@ -22,7 +22,7 @@ def blit_scenario() -> None:
         screen.blit(tile.image, tile.rect)
 
 pac_man = PacMan()
-blinky = Ghost("Blinky", (320, 300))
+blinky = Blinky((320, 300))
 
 if __name__ == "__main__":
     pygame.init()
