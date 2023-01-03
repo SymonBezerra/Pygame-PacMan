@@ -48,5 +48,5 @@ if __name__ == "__main__":
         pac_man.show(screen)
         pac_man.refresh(game_scenario)
 
-        CLOCK.tick(15)
+        CLOCK.tick(30)
         pygame.display.flip()
