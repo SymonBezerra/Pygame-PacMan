@@ -31,9 +31,15 @@ class PacMan (pygame.sprite.Sprite):
         elif self.move == "DOWN":
             new_rect = [self.coordinate[0], self.coordinate[1] + SPEED]
         elif self.move == "LEFT":
-            new_rect = [self.coordinate[0] - SPEED, self.coordinate[1]]
+            if self.coordinate[0] < 200:
+                new_rect = [600, self.coordinate[1]]
+            else:
+                new_rect = [self.coordinate[0] - SPEED, self.coordinate[1]]
         elif self.move == "RIGHT":
-            new_rect = [self.coordinate[0] + SPEED, self.coordinate[1]]
+            if self.coordinate[0] > 600:
+                new_rect = [200, self.coordinate[1]]
+            else:
+                new_rect = [self.coordinate[0] + SPEED, self.coordinate[1]]
 
         for tile in scenario.tiles:
             if tile.rect.collidepoint(new_rect[0], new_rect[1]):

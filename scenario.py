@@ -21,7 +21,7 @@ class Scenario:
     def start_scenario (self):
         for row in range(MAP_SIZE[0]):
             for column in range(MAP_SIZE[1]):
-                if GAME_MAP[column][row] not in ("-", 0):
+                if GAME_MAP[column][row] != "-":
                     tile = Wall((row,column),
                     int(GAME_MAP[column][row]))
                     self.tiles.add(tile)
