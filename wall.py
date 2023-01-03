@@ -4,7 +4,8 @@ WALL_SIZE = 25
 
 WALL_SPRITES = {0: "gfx/food_sprite.png",
 1: "gfx/wall_sprite.png",
-2: "gfx/special_sprite.png"}
+2: "gfx/special_sprite.png",
+3: "gfx/wall_sprite.png"}
 
 class Wall (pygame.sprite.Sprite):
 
