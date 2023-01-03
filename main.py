@@ -10,7 +10,7 @@ pygame.display.set_caption("Pac-Man")
 game_scenario = Scenario()
 
 def blit_scenario() -> None:
-    INIT_COORDS = (200,50)
+    INIT_COORDS = (200,100)
     tile: Wall
     for tile in game_scenario.tiles:
         tile_coord = (INIT_COORDS[0] + (WALL_SIZE * tile.coordinate[0]),

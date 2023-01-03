@@ -6,7 +6,7 @@ with open ("game_map.csv", newline="") as map:
     reader = csv.reader(map)
     GAME_MAP = [tile for tile in reader]
 
-MAP_SIZE = (20,25) #x, y axis
+MAP_SIZE = (20,21) #x, y axis
 
 # print(GAME_MAP)
 # the game map will only be used to set up
