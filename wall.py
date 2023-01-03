@@ -3,9 +3,7 @@ import pygame
 WALL_SIZE = 25
 
 WALL_SPRITES = {0: "gfx/food_sprite.png",
-1: "gfx/top_horizontal_wall.png",
-2: "gfx/wall_vertical.png",
-3: "gfx/bottom_horizontal_wall.png"}
+1: "gfx/wall_sprite"}
 
 class Wall (pygame.sprite.Sprite):
 
