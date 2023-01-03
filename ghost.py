@@ -1,5 +1,6 @@
 import pygame
 from scenario import Scenario
+from wall import Wall
 
 GHOSTS = {"Blinky": "gfx/blinky_1.png"}
 SPEED = 5
@@ -17,11 +18,11 @@ class Ghost (pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center=(self.coordinate))
 
     
-    def show (self, scenario: Scenario) -> None:
+    def show (self, screen: pygame.Surface) -> None:
         self.rect = self.image.get_rect(center=(self.coordinate))
         screen.blit(self.image, self.rect)
 
-    def refresh (self) -> bool:
+    def refresh (self, scenario: Scenario) -> bool:
         tile: Wall
         new_rect = []
         collision_check = []
