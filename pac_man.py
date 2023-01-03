@@ -42,7 +42,7 @@ class PacMan (pygame.sprite.Sprite):
             self.frame += 1
         else: self.frame = 0
         self.image = pygame.image.load(FRAMES[self.frame]).convert_alpha()
-        self.image = pygame.transform.scale(self.image, (20,20))
+        self.image = pygame.transform.scale(self.image, (25,25))
 
         # pacman invincible
         if self.countdown > 0:
@@ -55,27 +55,27 @@ class PacMan (pygame.sprite.Sprite):
         collision_check = []
         if self.move == "UP":
             new_rect = [self.coordinate[0], self.coordinate[1] - SPEED]
-            collision_check = [self.coordinate[0], self.coordinate[1] - SPEED * 4]
+            collision_check = [self.coordinate[0], self.coordinate[1] - SPEED * 3]
         elif self.move == "DOWN":
             new_rect = [self.coordinate[0], self.coordinate[1] + SPEED]
-            collision_check = [self.coordinate[0], self.coordinate[1] + SPEED * 4]
+            collision_check = [self.coordinate[0], self.coordinate[1] + SPEED * 3]
         elif self.move == "LEFT":
             if self.coordinate[0] < 100:
                 new_rect = [580, self.coordinate[1]]
                 collision_check = [580, self.coordinate[1]]
             else:
                 new_rect = [self.coordinate[0] - SPEED, self.coordinate[1]]
-                collision_check = [self.coordinate[0] - SPEED * 4, self.coordinate[1]]
+                collision_check = [self.coordinate[0] - SPEED * 3, self.coordinate[1]]
         elif self.move == "RIGHT":
             if self.coordinate[0] > 580:
                 new_rect = [100, self.coordinate[1]]
                 collision_check = [100, self.coordinate[1]]
             else:
                 new_rect = [self.coordinate[0] + SPEED, self.coordinate[1]]
-                collision_check = [self.coordinate[0] + SPEED * 4, self.coordinate[1]]
+                collision_check = [self.coordinate[0] + SPEED * 3, self.coordinate[1]]
 
         for tile in scenario.tiles:
-            if tile.rect.collidepoint(new_rect[0], collision_check[1]):
+            if tile.rect.collidepoint(collision_check[0], collision_check[1]):
                 if tile.type not in (0,2):
                     return False
                 else:
