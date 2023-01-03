@@ -2,6 +2,8 @@ import pygame
 from scenario import Scenario
 from wall import Wall
 
+SPEED = 20
+
 class PacMan (pygame.sprite.Sprite):
 
     def __init__ (self):
@@ -20,20 +22,25 @@ class PacMan (pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center=(self.coordinate))
         screen.blit(self.image, self.rect)
 
+    # collision detection
     def refresh (self, scenario: Scenario) -> bool:
         tile: Wall
         new_rect = []
         if self.move == "UP":
-            new_rect = [self.coordinate[0], self.coordinate[1] - 5]
+            new_rect = [self.coordinate[0], self.coordinate[1] - SPEED]
         elif self.move == "DOWN":
-            new_rect = [self.coordinate[0], self.coordinate[1] + 5]
+            new_rect = [self.coordinate[0], self.coordinate[1] + SPEED]
         elif self.move == "LEFT":
-            new_rect = [self.coordinate[0] - 5, self.coordinate[1]]
+            new_rect = [self.coordinate[0] - SPEED, self.coordinate[1]]
         elif self.move == "RIGHT":
-            new_rect = [self.coordinate[0] + 5, self.coordinate[1]]
+            new_rect = [self.coordinate[0] + SPEED, self.coordinate[1]]
+
         for tile in scenario.tiles:
-            if tile.rect.collidepoint(new_rect[0], new_rect[1]) and tile.type != 0:
-                return False
+            if tile.rect.collidepoint(new_rect[0], new_rect[1]):
+                if tile.type != 0:
+                    return False
+                else:
+                    scenario.tiles.remove(tile)
         
         self.coordinate = new_rect
         return True
