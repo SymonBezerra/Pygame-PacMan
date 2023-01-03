@@ -50,7 +50,7 @@ class PacMan (pygame.sprite.Sprite):
 
         for tile in scenario.tiles:
             if tile.rect.collidepoint(new_rect[0], collision_check[1]):
-                if tile.type != 0:
+                if tile.type not in (0,2):
                     return False
                 else:
                     scenario.tiles.remove(tile)
