@@ -1,4 +1,6 @@
 import pygame
+from scenario import Scenario
+from wall import Wall
 
 class PacMan (pygame.sprite.Sprite):
 
@@ -18,12 +20,20 @@ class PacMan (pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center=(self.coordinate))
         screen.blit(self.image, self.rect)
 
-    def refresh (self) -> None:
+    def refresh (self, scenario: Scenario) -> bool:
+        tile: Wall
+        new_rect = []
         if self.move == "UP":
-            self.coordinate[1] -= 5
+            new_rect = [self.coordinate[0], self.coordinate[1] - 5]
         elif self.move == "DOWN":
-            self.coordinate[1] += 5
+            new_rect = [self.coordinate[0], self.coordinate[1] + 5]
         elif self.move == "LEFT":
-            self.coordinate[0] -= 5
+            new_rect = [self.coordinate[0] - 5, self.coordinate[1]]
         elif self.move == "RIGHT":
-            self.coordinate[0] += 5
+            new_rect = [self.coordinate[0] + 5, self.coordinate[1]]
+        for tile in scenario.tiles:
+            if tile.rect.collidepoint(new_rect[0], new_rect[1]) and tile.type != 0:
+                return False
+        
+        self.coordinate = new_rect
+        return True

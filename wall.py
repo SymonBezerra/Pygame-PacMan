@@ -13,6 +13,8 @@ class Wall (pygame.sprite.Sprite):
     type: int) -> pygame.sprite.Sprite:
         super(Wall, self).__init__()
         self.coordinate = coordinate
+
+        self.type = type
         
         self.sprite = WALL_SPRITES[type]
 
