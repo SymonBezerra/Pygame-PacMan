@@ -3,14 +3,14 @@ from scenario import Scenario, GAME_MAP
 from wall import Wall, WALL_SIZE
 from pac_man import PacMan
 
-screen = pygame.display.set_mode((800, 800))
+screen = pygame.display.set_mode((800, 600))
 CLOCK = pygame.time.Clock()
 pygame.display.set_caption("Pac-Man")
 
 game_scenario = Scenario()
 
 def blit_scenario() -> None:
-    INIT_COORDS = (200,100)
+    INIT_COORDS = (100,50)
     tile: Wall
     for tile in game_scenario.tiles:
         tile_coord = (INIT_COORDS[0] + (WALL_SIZE * tile.coordinate[0]),
@@ -47,6 +47,6 @@ if __name__ == "__main__":
         blit_scenario()
         pac_man.show(screen)
         pac_man.refresh(game_scenario)
-
+        
         CLOCK.tick(20)
         pygame.display.flip()
