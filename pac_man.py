@@ -2,7 +2,7 @@ import pygame
 from scenario import Scenario
 from wall import Wall
 
-SPEED = 5
+SPEED = 10
 
 class PacMan (pygame.sprite.Sprite):
 
